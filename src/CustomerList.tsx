@@ -79,7 +79,8 @@ function CustomersList() {
           defaultValue="admin"
           sx={{
             width: "100%",
-            justifyContent: { xs: "space-between", md: "flex-start" },
+            display: 'flex',
+            justifyContent: { sm: "space-between", md: "flex-start" },
             marginTop: "1em",
             marginBottom: "1em",
           }}
@@ -89,7 +90,12 @@ function CustomersList() {
             selected={userType === "admin"}
             sx={{ borderRadius: "1em" }}
           >
-            <FormControlLabel value="admin" control={<Radio id='admin' />} label="Admin" htmlFor="admin" />
+            <FormControlLabel
+              value="admin"
+              control={<Radio id="admin" />}
+              label="Admin"
+              htmlFor="admin"
+            />
           </ListItemButton>
           <ListItemButton
             selected={userType === "manager"}
@@ -97,7 +103,7 @@ function CustomersList() {
           >
             <FormControlLabel
               value="manager"
-              control={<Radio id='manager'/>}
+              control={<Radio id="manager" />}
               label="Manager"
               htmlFor="manager"
             />
@@ -105,12 +111,12 @@ function CustomersList() {
         </RadioGroup>
       </FormLabel>
       <Divider variant="middle" sx={{ width: "90%" }} />
-      <Typography gutterBottom variant="h6" component="div">
+      <Typography gutterBottom variant="h6" component="div" sx={{marginTop: {sm: '0.5em', md: '1em'}}}>
         {userType.charAt(0).toUpperCase() + userType.slice(1)} Users
       </Typography>
       {filteredCustomers && (
         <List
-          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          sx={{ width: "100%", maxWidth: 600, bgcolor: "background.paper" }}
         >
           {filteredCustomers.map((customer: Customer) => (
             <ListItem key={customer.id}>

@@ -15,21 +15,22 @@ const BackgroundContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to top right, #69c0ff 10%, #b7eb8f 85%); ;
+  background-image: linear-gradient(to top right, #69c0ff 10%, #b7eb8f 85%);
 `;
 
 const CustomersListContainer = styled.div`
   margin: 1.5em;
-  padding: 1em;
+  padding: 2em;
   min-height: 30em;
-  min-width:20em;
+  min-width: 20em;
   box-shadow: 5px 10px 35px rgb(0 0 0 / 0.3);
   background-color: #fff;
   color: #000;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 2em;
   @media screen and (max-width: 600px) {
     overflow: visible;
+    padding: 0.5em;
     border-radius: 0.2em;
     box-shadow: 8px 2px 30px rgb(0 0 0 / 0.3);
   }
