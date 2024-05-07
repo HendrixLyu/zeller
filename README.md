@@ -9,7 +9,7 @@ npm install
 ```
 
 ```bash
-npm run 
+npm run start
 ```
 
 then, test by
