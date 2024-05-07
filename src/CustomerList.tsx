@@ -35,7 +35,6 @@ function CustomersList() {
 
   useEffect(() => {
     if (data) {
-      // setListZellerCustomer(data.listZellerCustomers.items);
       const formattedData = data.listZellerCustomers.items.map(
         (customer: Customer) => ({
           ...customer,
@@ -71,45 +70,50 @@ function CustomersList() {
   return (
     <>
       <FormLabel id="User-Types">
-        <Typography gutterBottom variant="h6" component="div">
-          User Types:
-        </Typography>
-        <RadioGroup
-          value={userType}
-          defaultValue="admin"
-          sx={{
-            width: "100%",
-            display: 'flex',
-            justifyContent: { sm: "space-between", md: "flex-start" },
-            marginTop: "1em",
-            marginBottom: "1em",
-          }}
-          onChange={handleChange}
-        >
-          <ListItemButton
-            selected={userType === "admin"}
-            sx={{ borderRadius: "1em" }}
-          >
-            <FormControlLabel
-              value="admin"
-              control={<Radio id="admin" />}
-              label="Admin"
-              htmlFor="admin"
-            />
-          </ListItemButton>
-          <ListItemButton
-            selected={userType === "manager"}
-            sx={{ borderRadius: "1em" }}
-          >
-            <FormControlLabel
-              value="manager"
-              control={<Radio id="manager" />}
-              label="Manager"
-              htmlFor="manager"
-            />
-          </ListItemButton>
-        </RadioGroup>
-      </FormLabel>
+  <Typography gutterBottom variant="h6" component="div">
+    User Types:
+  </Typography>
+  <RadioGroup
+    value={userType}
+    defaultValue="admin"
+    sx={{
+      width: "100%",
+      display: 'flex',
+      justifyContent: { sm: "space-between", md: "flex-start" },
+      marginTop: "1em",
+      marginBottom: "1em",
+    }}
+    onChange={handleChange}
+  >
+    <ListItemButton
+      selected={userType === "admin"}
+      sx={{ borderRadius: "1em" }}
+    >
+      <label htmlFor="admin">
+        <FormControlLabel
+          id='666'
+          value="admin"
+          control={<Radio id="admin" />}
+          label="Admin"
+          data-testid='admin-radio'
+        />
+      </label>
+    </ListItemButton>
+    <ListItemButton
+      selected={userType === "manager"}
+      sx={{ borderRadius: "1em" }}
+    >
+      <label htmlFor="manager">
+        <FormControlLabel
+          value="manager"
+          control={<Radio id="manager" />}
+          label="Manager"
+          data-testid='manager-radio'
+        />
+      </label>
+    </ListItemButton>
+  </RadioGroup>
+</FormLabel>
       <Divider variant="middle" sx={{ width: "90%" }} />
       <Typography gutterBottom variant="h6" component="div" sx={{marginTop: {sm: '0.5em', md: '1em'}}}>
         {userType.charAt(0).toUpperCase() + userType.slice(1)} Users
